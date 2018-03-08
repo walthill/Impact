@@ -10,3 +10,4 @@ Your Planned Features:
 * Feature B
 
 ## Your License
+This project operates under the [Apache 2.0 license](https://github.com/CSI280-S17/Montpelier/blob/master/LICENSE). 
