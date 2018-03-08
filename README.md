@@ -6,8 +6,9 @@ Your Project Maintainer is **Walter**
 Your Project Description
 
 Your Planned Features:
-* Feature A
-* Feature B
+* Arcticle Searching
+* Filtering
+* [Twitch API](https://dev.twitch.tv/) integration
 
 ## License
 This project operates under the [Apache 2.0 license](https://github.com/CSI280-S17/Montpelier/blob/master/LICENSE). 
