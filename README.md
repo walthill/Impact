@@ -5,7 +5,7 @@ Your Project Maintainer is **Walter**
 
 Your Project Description
 
-Your Planned Features:
+Planned Features:
 * Arcticle Searching
 * Filtering
 * [Twitch API](https://dev.twitch.tv/) integration
