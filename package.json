@@ -1,0 +1,21 @@
+{
+  "name": "Montpelier",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CSI280-S17/Montpelier.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/CSI280-S17/Montpelier/issues"
+  },
+  "homepage": "https://github.com/CSI280-S17/Montpelier#readme",
+  "devDependencies": {
+    "electron": "^1.8.3"
+  }
+}
