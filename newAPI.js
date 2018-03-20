@@ -7,7 +7,7 @@ const queryOptions =  'Super Smash OR league of legends OR Overwatch OR CSGO OR 
 
 //PRE:      None
 //POST:     No returns, just prints news to console
-//PURPOSE:  Prints to console a list of ten results 
+//PURPOSE:  Prints to console a list of ten results
 function printHeadlines() {
     //News API object
     //The everything keyword queries from everything
@@ -18,7 +18,7 @@ function printHeadlines() {
         q: queryOptions,    //The keywords to search for
         language: 'en'      //The language desired for news
     }).then(response => {
-    
+
     var text = response;    //Response is what we get back, asssigning it to a variable
                             //text is a JSON object with an array containing all the news information
                             //For a better understanding refer to here:
@@ -27,12 +27,15 @@ function printHeadlines() {
 
     console.log(numResponse);
 
-    var count = 0;
-    while(count <= 10){
+    const feed = document.getElementById("feed")
+
+    var count = 1;
+    while(count <= 15){
         //This prints out the news title followed by the description
-        console.log(text.articles[count].title);
-        console.log("   " + text.articles[count].description);
-        console.log();
+        feed.innerHTML += '<div class="row rounded bg-secondary m-2">' + "<h2>" + count + ": "
+                        + text.articles[count].title + "</h2>"
+                        + text.articles[count].description
+                        + '</div>';
         count++;
     }
 
