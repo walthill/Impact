@@ -1,35 +1,33 @@
 <!DOCTYPE html>
   <html>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css">
-	<script src="../api/newsAPI.js"></script>
-	
+	  <script src="../api/newsAPI.js"></script>
+
 	<head>
       <meta charset="UTF-8">
       <title>**App title** - Esports News</title>
     </head>
-    <body  onload="displayNewsFeed()">
-      <div class="window">
-        <header class="header">
-          <h1>News</h1>
-        </header>
-        <div class="windowContent">
-          <div class="panes">
-            <div class="sidebar">
+    <body onload="displayNewsFeed()">
+    <header class="jumbotron">
+      <h1>News</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 p-4 bg-dark rounded">
               <!--Sidebar content-->
               <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="twitch.html">Twitch</a></li>
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="twitch.html">Twitch</a></li>
               </ul>
             </div>
-            <div id="newsfeed" class="mainPane">
+            <div id="newsfeed" class="col bg-light rounded">
               <!-- Main content goes here -->
-              time for some newsssss 
             </div>
-          </div>
         </div>
-        <footer class="footer">
-          <h2>Footer space copyright 2018 blah corporate blah</h2>
-        </footer>
-      </div>
+    </div>
+    <footer class="footer">
+    </footer>
     </body>
   </html>

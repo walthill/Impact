@@ -1,8 +1,12 @@
 <!DOCTYPE html>
   <html>
-    <link rel="stylesheet" href="/css/styles.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script>
-	
+
 	const notifier = require('node-notifier');
 	// String
 	//notifier.notify('Message');
@@ -12,7 +16,7 @@
 	  title: 'My notification',
 	  message: 'Hello, there!'
 	});*/
-	
+
 	//This is temporary code to test notifications
 	function testNotification()
 	{
@@ -21,37 +25,32 @@
 			message: 'Hello there!'
 		});
 	}
-		
+
 	</script>
 	<head>
       <meta charset="UTF-8">
       <title>**App title**</title>
     </head>
     <body>
-      <div class="window">
-        <header class="header">
-          <h1>**App Title**</h1>
-		  <h2>The Feed</h2>
-        </header>
-        <div class="windowContent">
-          <div class="panes">
-            <div class="sidebar">
+    <header class="jumbotron">
+      <h1>News</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 p-4 bg-dark rounded">
               <!--Sidebar content-->
               <ul>
                 <li><a href="#home" onclick="testNotification()">Home</a></li>
-                <li><a href="site/news.html">News</a></li> 
+                <li><a href="site/news.html">News</a></li>
                 <li><a href="site/twitch.html">Twitch</a></li>
               </ul>
             </div>
-            <div class="mainPane">
+            <div class="col bg-light rounded">
               <!-- Main content goes here -->
-              ya ya ya ya 
             </div>
-          </div>
         </div>
-        <footer class="footer">
-          <h2>Footer space copyright blah blah blah</h2>
-        </footer>
-      </div>
+    </div>
+    <footer class="footer">
+    </footer>
     </body>
   </html>
