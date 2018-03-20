@@ -14,7 +14,7 @@ Planned Features:
 
 ## Building
 1. Install Node.js and NPM
-2. Inside the project directory, install standard dependencies
+2. Inside the project directory install dependencies
 ```
 npm install
 ```
