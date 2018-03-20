@@ -26,6 +26,8 @@
 		});
 	}
 
+    printHeadlines();
+
 	</script>
 	<head>
       <meta charset="UTF-8">
@@ -33,20 +35,20 @@
     </head>
     <body>
     <header class="jumbotron">
-      <h1>News</h1>
+      <h1>Feed</h1>
     </header>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 p-4 bg-dark rounded">
               <!--Sidebar content-->
               <ul>
-                <li><a href="#home" onclick="testNotification()">Home</a></li>
+                <li><a href="">Home</a></li>
                 <li><a href="site/news.html">News</a></li>
                 <li><a href="site/twitch.html">Twitch</a></li>
               </ul>
             </div>
-            <div class="col bg-light rounded">
-              <!-- Main content goes here -->
+            <div class="col bg-light rounded" id="feed">
+                <!-- Main content goes here -->
             </div>
         </div>
     </div>
