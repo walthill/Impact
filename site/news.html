@@ -1,11 +1,13 @@
 <!DOCTYPE html>
   <html>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
+	<script src="../api/newsAPI.js"></script>
+	
 	<head>
       <meta charset="UTF-8">
       <title>**App title** - Esports News</title>
     </head>
-    <body>
+    <body  onload="displayNewsFeed()">
       <div class="window">
         <header class="header">
           <h1>News</h1>
@@ -19,7 +21,7 @@
                 <li><a href="twitch.html">Twitch</a></li>
               </ul>
             </div>
-            <div class="mainPane">
+            <div id="newsfeed" class="mainPane">
               <!-- Main content goes here -->
               time for some newsssss 
             </div>
