@@ -14,11 +14,15 @@ Planned Features:
 
 ## Building
 1. Install Node.js and NPM
-2. Inside the project directory install the dependencies with:
+2. Inside the project directory, install standard dependencies
 ```
 npm install
 ```
-3. To run the application use:
+3. Install notification package
+```
+npm install --save node-notifier
+```
+4. To run the application use:
 ```
 npm start
 ```
