@@ -6,12 +6,14 @@ Your Project Maintainer is **Walter**
 Your Project Description
 
 Planned Features:
-* Arcticle Searching
+* Article Searching
+* Bookmarking Articles
 * Filtering
+* [News API](https://newsapi.org/) integration
 * [Twitch API](https://dev.twitch.tv/) integration
 
 ## Building
-1. Install Node and NPM
+1. Install Node.js and NPM
 2. Inside the project directory install the dependencies with:
 ```
 npm install
