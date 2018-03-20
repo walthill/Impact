@@ -18,11 +18,7 @@ Planned Features:
 ```
 npm install
 ```
-3. Install notification package
-```
-npm install --save node-notifier
-```
-4. To run the application use:
+3. To run the application use:
 ```
 npm start
 ```
