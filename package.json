@@ -19,6 +19,9 @@
     "electron": "^1.8.4"
   },
   "dependencies": {
-    "node-notifier": "^5.2.1"
+      "node-notifier": "^5.2.1",
+      "jquery": "^1.9.1",
+      "popper.js": "^1.12.9",
+      "bootstrap": "^4.0.0"
   }
 }
