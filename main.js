@@ -30,6 +30,7 @@ const {app, BrowserWindow, Menu} = require('electron')
     {
       role: 'help',
       submenu: [
+        {role: 'toggledevtools'},
         {
           label: 'Learn More',
           click(){require('electron').shell.openExternal('https://github.com/CSI280-S17/Montpelier')}
