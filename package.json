@@ -17,5 +17,8 @@
   "homepage": "https://github.com/CSI280-S17/Montpelier#readme",
   "devDependencies": {
     "electron": "^1.8.4"
+  },
+  "dependencies": {
+    "node-notifier": "^5.2.1"
   }
 }

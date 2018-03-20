@@ -1,7 +1,29 @@
 <!DOCTYPE html>
   <html>
     <link rel="stylesheet" href="/css/styles.css">
-    <head>
+    <script>
+	
+	const notifier = require('node-notifier');
+	// String
+	//notifier.notify('Message');
+
+	// Object
+	/*notifier.notify({
+	  title: 'My notification',
+	  message: 'Hello, there!'
+	});*/
+	
+	//This is temporary code to test notifications
+	function testNotification()
+	{
+		notifier.notify({
+			title: 'Home Link notification',
+			message: 'Hello there!'
+		});
+	}
+		
+	</script>
+	<head>
       <meta charset="UTF-8">
       <title>**App title**</title>
     </head>
@@ -13,9 +35,9 @@
         <div class="windowContent">
           <div class="panes">
             <div class="sidebar">
-              <!--Sidebar content-->
+              <!--Sidebar content-->c
               <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" onclick="testNotification()">Home</a></li>
                 <li><a href="#news">News</a></li> 
                 <li><a href="#twitch">twitch</a></li>
               </ul>
