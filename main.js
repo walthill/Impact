@@ -1,10 +1,42 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, Menu} = require('electron')
     const path = require('path')
     const url = require('url')
 
   // A global reference of the window object so the window won't be
   // be closed when the JavaScript object is garbage collected.
   let win = null
+
+  // Menu template
+  const appMenuTemplate = [
+    {
+      label: 'View',
+      submenu: [
+        {role: 'reload'},
+        {type: 'separator'},
+        {role: 'resetzoom'},
+        {role: 'zoomin'},
+        {role: 'zoomout'},
+        {type: 'separator'},
+        {role: 'togglefullscreen'}
+      ]
+    },
+    {
+      role: 'window',
+      submenu: [
+        {role: 'minimize'},
+        {role: 'close'}
+      ]
+    },
+    {
+      role: 'help',
+      submenu: [
+        {
+          label: 'Learn More',
+          click(){require('electron').shell.openExternal('https://github.com/CSI280-S17/Montpelier')}
+        }
+      ]
+    }
+  ]
 
   function createWindow () {
     // Create the browser window.
@@ -23,6 +55,10 @@ const {app, BrowserWindow} = require('electron')
 
     // Open the DevTools.
     // win.webContents.openDevTools()
+
+    //Use template to make menu
+    const appMenu = Menu.buildFromTemplate(appMenuTemplate)
+    Menu.setApplicationMenu(appMenu)
 
     // Emitted when the window is closed.
     win.on('closed', () => {
