@@ -7,34 +7,41 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="api/newsAPI.js"></script>
     <script>
+      const notifier = require('node-notifier');
+      // String
+      //notifier.notify('Message');
 
-	const notifier = require('node-notifier');
-	// String
-	//notifier.notify('Message');
+      // Object
+      /*notifier.notify({
+        title: 'My notification',
+        message: 'Hello, there!'
+      });*/
 
-	// Object
-	/*notifier.notify({
-	  title: 'My notification',
-	  message: 'Hello, there!'
-	});*/
+      //This is temporary code to test notifications
+      function testNotification()
+      {
+        notifier.notify({
+          title: 'Home Link notification',
+          message: 'Hello there!'
+        });
+      }
+      
+      //This function fixes the problem if the article has
+      //a broken image file or link.
+      function SRCcheck(image){
+        image.onerror = null;
+        image.src = "media/default.png";
+        //return true;
+      }
 
-	//This is temporary code to test notifications
-	function testNotification()
-	{
-		notifier.notify({
-			title: 'Home Link notification',
-			message: 'Hello there!'
-		});
-	}
-
-    printHeadlines();
+      printHeadlines();
 
 	</script>
 	<head>
       <meta charset="UTF-8">
       <title>**App title**</title>
     </head>
-    <body>
+    <body onload="SRCcheck();">
     <header class="jumbotron">
       <h1>Feed</h1>
     </header>

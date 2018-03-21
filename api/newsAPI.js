@@ -37,7 +37,7 @@ function printHeadlines() {
                         + text.articles[count].title + "</h2>"
 						+ '<p><img src="'
 						+ text.articles[count].urlToImage
-                        + '" alt="news"></p>'
+                        + '" alt="news" onerror="SRCcheck(this);"></p>'
 						+ text.articles[count].description
                         + '</div>';
         count++;
