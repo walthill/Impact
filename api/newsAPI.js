@@ -31,14 +31,19 @@ function printHeadlines() {
 
     var count = 1;
     while(count <= 15){
-		
         //This prints out the news title followed by the description
-        feed.innerHTML += '<div class="row rounded bg-secondary m-2">' + "<h2>" + count + ": "
-                        + text.articles[count].title + "</h2>"
-						+ '<p><img src="'
+        feed.innerHTML += '<div class="row rounded bg-secondary m-2 p-2">'
+                        + '<div class="col-2">'
+                        + '<img src="'
 						+ text.articles[count].urlToImage
-                        + '" alt="news" onerror="SRCcheck(this);"></p>'
-						+ text.articles[count].description
+                        + '" class="articleThumb" onerror="SRCcheck(this)">'
+                        + '</div>'
+                        + '<div class="col-10">'
+                        + "<h2>" + count + ": "
+                        + text.articles[count].title + "</h2>"
+						+ "<p>" + text.articles[count].description
+                        + "</p>"
+                        + '</div>'
                         + '</div>';
         count++;
     }

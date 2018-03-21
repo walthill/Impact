@@ -25,13 +25,12 @@
           message: 'Hello there!'
         });
       }
-      
+
       //This function fixes the problem if the article has
       //a broken image file or link.
       function SRCcheck(image){
         image.onerror = null;
         image.src = "media/default.png";
-        //return true;
       }
 
       printHeadlines();
@@ -41,13 +40,13 @@
       <meta charset="UTF-8">
       <title>**App title**</title>
     </head>
-    <body onload="SRCcheck();">
+    <body>
     <header class="jumbotron">
       <h1>Feed</h1>
     </header>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2 p-4 bg-dark rounded">
+        <div class="row bg-light">
+            <div class="col-md-2 m-2 p-4 bg-dark rounded">
               <!--Sidebar content-->
               <ul>
                 <li><a href="">Home</a></li>
@@ -55,7 +54,7 @@
                 <li><a href="site/twitch.html">Twitch</a></li>
               </ul>
             </div>
-            <div class="col bg-light rounded" id="feed">
+            <div class="col rounded" id="feed">
                 <!-- Main content goes here -->
             </div>
         </div>
