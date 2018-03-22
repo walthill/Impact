@@ -14,9 +14,8 @@
     padding: 1px 16px;
 }
 
-img {
+.articleThumb {
     display: block;
     width: 100%;
     height: auto;
-
 }

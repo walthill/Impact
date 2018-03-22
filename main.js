@@ -42,9 +42,10 @@ const {app, BrowserWindow, Menu} = require('electron')
   function createWindow () {
     // Create the browser window.
     win = new BrowserWindow({
-        title: 'Montpelier',
+        title: 'Impact',
         width: 800,
-        height: 600
+        height: 600,
+        icon: __dirname + '/media/icon64.png'
     })
 
     // Load the index.html of the app.
