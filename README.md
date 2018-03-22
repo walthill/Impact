@@ -1,9 +1,10 @@
 *Rewrite this readme as a team.*
 Your Project Maintainer is **Walter**
 
-# Your Project Title
+# Impact
 
-Your Project Description
+Impact is your one stop shop for Esports news. Get daily esports headlines and keep up with the top streamers all from within the application.
+Impact runs cross-platform as a native desktop application through the Electron.js framework 
 
 Planned Features:
 * Article Searching
