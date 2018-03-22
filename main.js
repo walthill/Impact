@@ -43,10 +43,14 @@ const {app, BrowserWindow, Menu} = require('electron')
     // Create the browser window.
     win = new BrowserWindow({
         title: 'Impact',
-        width: 800,
-        height: 600,
-        icon: __dirname + '/media/icon64.png'
+        width: 1000,
+        height: 1200,
+        icon: __dirname + '/media/icon64.png',
+        show: false
     })
+    // Allow window to start maximized.
+    win.maximize()
+    win.show()
 
     // Load the index.html of the app.
     win.loadURL(url.format({
