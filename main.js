@@ -49,7 +49,7 @@ function createWindow () {
         title: 'Impact',
         width: 1000,
         height: 1200,
-        icon: __dirname + '/media/icon64.png',
+        icon: __dirname + '/media/logoRedesign.png',
         show: false
     })
     // Allow window to start maximized.
