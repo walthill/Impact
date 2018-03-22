@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
 	<head>
       <meta charset="UTF-8">
       <title>Impact</title>
@@ -30,9 +33,6 @@
               <!-- Playing around with the Twitch interactive frame (NOT THE API) -->
                     <!-- Add a placeholder for the Twitch embed -->
               <div id="twitch-embed"></div>
-
-              <!-- Load the Twitch embed script -->
-              <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
               <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
               <script type="text/javascript">
