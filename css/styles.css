@@ -1,28 +1,14 @@
-.sidebar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 25%;
-    background-color: #d41d1d;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-}
-
-.mainPane {
-    margin-left: 20%;
-    padding: 1px 16px;
-}
-
 .articleThumb {
     display: block;
     width: 100%;
     height: auto;
 }
+
 .fixed {
     position: fixed;
     width: 25%;
 }
+
 .scrollit {
     float: left;
     width: 71%
