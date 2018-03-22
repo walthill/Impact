@@ -5,6 +5,20 @@ const defaultOptions =  'League of Legends OR Super Smash OR Overwatch OR CSGO O
                         'OR Call of duty OR WoW OR World Of Warcraft';
     //This is a list of all the keywords we're looking for
     //Keep everything in one string seperated by OR
+//PRE:      newsURL: The url we are launching
+//          id: The ID of the button to edit the HTML of
+//POST:     No returns, changes the html of the button to be an iframe of new article
+//PURPOSE:  Launches the desired news article in an iframe within the button that it was pressed
+function displayArticle(newsURL, id) {
+    var newsFeed = document.getElementById(id)  //The button to edit
+
+    feed.innerHTML = '<button id="' + buttonID + '" onclick="displayArticle(' + newsURL + ', ' + buttonID + ')">'
+                    + '<div class="col-10">'
+                    + '<iframe src=' + newsURL + '></iframe>'
+                    + '</div>'
+                    + '</div>'
+                    + '</button>';
+}
 
 
 //PRE:      None
@@ -108,22 +122,3 @@ function printUserHeadlines(userOption){
   });
 }
 
-function displayArticle(newsURL, id) {
-    var newsFeed = document.getElementById(id)
-
-    feed.innerHTML = '<button id="' + buttonID + '" onclick="displayArticle(' + newsURL + ', ' + buttonID + ')">'
-                    // + '<div class="col-2">'
-                    // // + '<img src="'
-                    // // + text.articles[count].urlToImage
-                    // // + '" class="articleThumb" onerror="SRCcheck(this)">'
-                    // + '</div>'
-                    + '<div class="col-10">'
-                    + '<iframe src=' + newsURL + '></iframe>'
-                    // + "<h2>" + count + ": "
-                    // + text.articles[count].title + "</h2>"
-                    // + "<p>" + text.articles[count].description
-                    // + "</p>"
-                    + '</div>'
-                    + '</div>'
-                    + '</button>';
-}
