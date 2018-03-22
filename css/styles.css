@@ -19,3 +19,11 @@
     width: 100%;
     height: auto;
 }
+.fixed {
+    position: fixed;
+    width: 25%;
+}
+.scrollit {
+    float: left;
+    width: 71%
+}
