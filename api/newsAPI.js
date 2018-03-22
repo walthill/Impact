@@ -6,6 +6,7 @@ const defaultOptions =  'League of Legends OR Super Smash OR Overwatch OR CSGO O
     //This is a list of all the keywords we're looking for
     //Keep everything in one string seperated by OR
 
+
 //PRE:      None
 //POST:     No returns, just prints news to html
 //PURPOSE:  Prints to html a list of ten results
@@ -16,6 +17,7 @@ function printHeadlines() {
     newsapi.v2.everything({
         //sources:
         //category:
+        sortBy: 'popularity',
         q: defaultOptions,    //The keywords to search for
         language: 'en'      //The language desired for news
     }).then(response => {
@@ -28,12 +30,14 @@ function printHeadlines() {
 
     console.log(numResponse);
 
-    const feed = document.getElementById("feed")
+    var feed = document.getElementById("feed")
 
     var count = 1;
     while(count <= 15){
-        //This prints out the news title followed by the description
-        feed.innerHTML += '<div class="row rounded bg-secondary m-2 p-2">'
+        //This prints out the news title followed by the description 
+        var buttonID = 'button' + String(count);
+        feed.innerHTML += '<button id="' + buttonID + '" onclick="displayArticle(' + text.articles[count].url + ', ' + buttonID + ')">'
+                        + '<div class="row rounded bg-secondary m-2 p-2">'
                         + '<div class="col-2">'
                         + '<img src="'
 						+ text.articles[count].urlToImage
@@ -44,8 +48,10 @@ function printHeadlines() {
                         + text.articles[count].title + "</h2>"
 						+ "<p>" + text.articles[count].description
                         + "</p>"
+                        //+ "<iframe src=" + text.articles[count].url + "></iframe>"
                         + '</div>'
-                        + '</div>';
+                        + '</div>'
+                        + '</button>';
         count++;
     }
 
@@ -100,4 +106,24 @@ function printUserHeadlines(userOption){
     }
 
   });
+}
+
+function displayArticle(newsURL, id) {
+    var newsFeed = document.getElementById(id)
+
+    feed.innerHTML = '<button id="' + buttonID + '" onclick="displayArticle(' + newsURL + ', ' + buttonID + ')">'
+                    // + '<div class="col-2">'
+                    // // + '<img src="'
+                    // // + text.articles[count].urlToImage
+                    // // + '" class="articleThumb" onerror="SRCcheck(this)">'
+                    // + '</div>'
+                    + '<div class="col-10">'
+                    + '<iframe src=' + newsURL + '></iframe>'
+                    // + "<h2>" + count + ": "
+                    // + text.articles[count].title + "</h2>"
+                    // + "<p>" + text.articles[count].description
+                    // + "</p>"
+                    + '</div>'
+                    + '</div>'
+                    + '</button>';
 }
