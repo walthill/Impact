@@ -1,45 +1,49 @@
 const {app, BrowserWindow, Menu} = require('electron')
-    const path = require('path')
-    const url = require('url')
+const path = require('path')
+const url = require('url')
 
-  // A global reference of the window object so the window won't be
-  // be closed when the JavaScript object is garbage collected.
-  let win = null
+require('electron-context-menu')({
+    showInspectElement: true
+});
 
-  // Menu template
-  const appMenuTemplate = [
+// A global reference of the window object so the window won't be
+// be closed when the JavaScript object is garbage collected.
+let win = null
+
+// Menu template
+const appMenuTemplate = [
     {
       label: 'View',
-      submenu: [
-        {role: 'reload'},
-        {type: 'separator'},
-        {role: 'resetzoom'},
-        {role: 'zoomin'},
-        {role: 'zoomout'},
-        {type: 'separator'},
-        {role: 'togglefullscreen'}
-      ]
+        submenu: [
+            {role: 'reload'},
+            {type: 'separator'},
+            {role: 'resetzoom'},
+            {role: 'zoomin'},
+            {role: 'zoomout'},
+            {type: 'separator'},
+            {role: 'togglefullscreen'}
+        ]
     },
     {
-      role: 'window',
-      submenu: [
-        {role: 'minimize'},
-        {role: 'close'}
-      ]
+        role: 'window',
+        submenu: [
+            {role: 'minimize'},
+            {role: 'close'}
+        ]
     },
     {
-      role: 'help',
-      submenu: [
-        {role: 'toggledevtools'},
-        {
-          label: 'Learn More',
-          click(){require('electron').shell.openExternal('https://github.com/CSI280-S17/Montpelier')}
-        }
-      ]
+        role: 'help',
+        submenu: [
+            {role: 'toggledevtools'},
+            {
+              label: 'Learn More',
+              click(){require('electron').shell.openExternal('https://github.com/CSI280-S17/Montpelier')}
+            }
+        ]
     }
-  ]
+]
 
-  function createWindow () {
+function createWindow () {
     // Create the browser window.
     win = new BrowserWindow({
         title: 'Impact',
@@ -73,25 +77,25 @@ const {app, BrowserWindow, Menu} = require('electron')
       // when you should delete the corresponding element.
       win = null
     })
-  }
+}
 
-  // This method will be called when Electron has finished
-  // initialization and is ready to create browser windows.
-  app.on('ready', createWindow)
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+app.on('ready', createWindow)
 
-  // Quit when all windows are closed.
-  app.on('window-all-closed', () => {
+// Quit when all windows are closed.
+app.on('window-all-closed', () => {
     // On macOS it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
     if (process.platform !== 'darwin') {
       app.quit()
     }
-  })
+})
 
-  app.on('activate', () => {
+app.on('activate', () => {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (win === null) {
       createWindow()
     }
-  })
+})
