@@ -5,20 +5,6 @@ const defaultOptions =  'League of Legends OR Super Smash OR Overwatch OR CSGO O
                         'OR Call of duty OR WoW OR World Of Warcraft';
     //This is a list of all the keywords we're looking for
     //Keep everything in one string seperated by OR
-//PRE:      newsURL: The url we are launching
-//          id: The ID of the button to edit the HTML of
-//POST:     No returns, changes the html of the button to be an iframe of new article
-//PURPOSE:  Launches the desired news article in an iframe within the button that it was pressed
-function displayArticle(newsURL, id) {
-    var newsFeed = document.getElementById(id)  //The button to edit
-
-    feed.innerHTML = '<button id="' + buttonID + '" onclick="displayArticle(' + newsURL + ', ' + buttonID + ')">'
-                    + '<div class="col-10">'
-                    + '<iframe src=' + newsURL + '></iframe>'
-                    + '</div>'
-                    + '</div>'
-                    + '</button>';
-}
 
 
 //PRE:      None
@@ -50,8 +36,8 @@ function printHeadlines() {
     while(count <= 15){
         //This prints out the news title followed by the description 
         var buttonID = 'button' + String(count);
-        feed.innerHTML += '<button id="' + buttonID + '" onclick="displayArticle(' + text.articles[count].url + ', ' + buttonID + ')">'
-                        + '<div class="row rounded bg-secondary m-2 p-2">'
+        feed.innerHTML += //'<button id="' + buttonID + '" onclick="displayArticle(' + text.articles[count].url + ', ' + buttonID + ')">'
+                        '<div class="row rounded bg-secondary m-2 p-2">'
                         + '<div class="col-2">'
                         + '<img src="'
 						+ text.articles[count].urlToImage
@@ -64,8 +50,8 @@ function printHeadlines() {
                         + "</p>"
                         //+ "<iframe src=" + text.articles[count].url + "></iframe>"
                         + '</div>'
-                        + '</div>'
-                        + '</button>';
+                        + '</div>';
+                        //+ '</button>';
         count++;
     }
 
