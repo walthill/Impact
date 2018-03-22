@@ -18,7 +18,7 @@ function displayArticle(newsURL, id) {
                     + '</div>'
                     + '</div>'
                     + '</button>';
-}
+} 
 
 
 //PRE:      None
