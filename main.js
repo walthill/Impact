@@ -41,7 +41,21 @@ const appMenuTemplate = [
             }
         ]
     }
-]
+ ]
+
+if (process.platform == 'darwin') {
+    var name = app.getName();
+    appMenuTemplate.unshift({
+        label: name,
+        submenu: [
+               {
+               label: 'Quit',
+               accelerator: 'Command+Q',
+               click() { app.quit(); }
+               },
+               ]
+        });
+}
 
 function createWindow () {
     // Create the browser window.
