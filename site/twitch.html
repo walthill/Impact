@@ -30,16 +30,40 @@
             </nav>
             <div class="col-md-10 rounded" id="twitchFeed">
                 <!-- Main content goes here -->
+                <h1><strong>Twitch Streams</strong> <em>(by # of followers)</em></h1>
               <!-- Playing around with the Twitch interactive frame (NOT THE API) -->
                     <!-- Add a placeholder for the Twitch embed -->
-              <div id="twitch-embed"></div>
-
+              <h2>1.) <strong>Ninja</strong></h2>
+              <div id="twitch-embed1"></div>
+              <h2>2.) <strong>Summit1g</strong></h2>
+              <div id="twitch-embed2"></div>
+              <h2>3.) <strong>Riotgames</strong></h2>
+              <div id="twitch-embed3"></div>
+              
               <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
               <script type="text/javascript">
-                new Twitch.Embed("twitch-embed", {
+                new Twitch.Embed("twitch-embed1", {
                   width: 854,
                   height: 480,
-                  channel: "ninja"
+                  channel: "ninja",
+                  autoplay: false
+
+                });
+              </script>
+              <script type="text/javascript">
+                new Twitch.Embed("twitch-embed2", {
+                  width: 854,
+                  height: 480,
+                  channel: "summit1g",
+                  autoplay: false
+                });
+              </script>
+              <script type="text/javascript">
+                new Twitch.Embed("twitch-embed3", {
+                  width: 854,
+                  height: 480,
+                  channel: "riotgames",
+                  autoplay: false
                 });
               </script>
             </div>
