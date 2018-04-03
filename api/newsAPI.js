@@ -1,6 +1,6 @@
 const NewsAPI = require('newsapi'); //Importing the news API
 const newsapi = new NewsAPI('f18e802ece204e9280772a9179a6be6c');    //This is our API Key
-const defaultOptions =  'League of Legends OR Super Smash OR Overwatch OR CSGO OR CS:GO' + 
+const defaultOptions =  'League of Legends OR Super Smash OR Overwatch OR CSGO OR CS:GO' +
                         'OR Counter Strike OR PUBG OR Playunknown OR Fortnite OR Dota ' +
                         'OR Call of duty OR WoW OR World Of Warcraft';
     //This is a list of all the keywords we're looking for
@@ -34,7 +34,7 @@ function printHeadlines() {
 
     var count = 1;
     while(count <= 15){
-        //This prints out the news title followed by the description 
+        //This prints out the news title followed by the description
         var buttonID = 'button' + String(count);
         feed.innerHTML += //'<button id="' + buttonID + '" onclick="displayArticle(' + text.articles[count].url + ', ' + buttonID + ')">'
                         '<div class="row rounded bg-secondary m-2 p-2">'
@@ -48,6 +48,9 @@ function printHeadlines() {
                         + text.articles[count].title + "</h2>"
 						+ "<p>" + text.articles[count].description
                         + "</p>"
+                        + "<button class=\"btn btn-dark\" onclick=favoriteArticle(\""
+                        + text.articles[count].url
+                        + "\")>Favorite</button>"
                         //+ "<iframe src=" + text.articles[count].url + "></iframe>"
                         + '</div>'
                         + '</div>';
@@ -59,7 +62,7 @@ function printHeadlines() {
 }
 //Pre:      userOptions is a string containing the user inputted search options
 //Post:     No returns, all user options will be searched and printed
-//Purpose:  This is exactally the same as the function above except it searches for 
+//Purpose:  This is exactally the same as the function above except it searches for
 //          the user options instead of our default.
 //          Additionally keeps a string compiled of all user options so they can continue adding more options
 function printUserHeadlines(userOption){
@@ -108,3 +111,13 @@ function printUserHeadlines(userOption){
   });
 }
 
+function favoriteArticle(article) {
+
+    var fs = require('fs')
+
+    fs.appendFile('favorites.txt', article + "\n",
+        (err) => {
+      if (err) throw err;
+      console.log('The file has been saved!');
+    });
+}
