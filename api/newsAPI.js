@@ -73,12 +73,18 @@ function printHeadlines() {
   });
 }
 
+//PRE:      None
+//POST:     No returns, just prints the new news articles to html
+//PURPOSE:  Updates the html with a new set of 15 articles. Can continue
+//          loading more articles until there is none left in the JSON
+//          element that is received
 function loadMoreArticles(){
+    //Initializes the isMoreArticles boolean if not initialized
     if(typeof loadMoreArticles.isMoreArticles == 'undefined')
         loadMoreArticles.isMoreArticles = true;
 
+    //Only loads more articles if there is more to be loaded
     if(loadMoreArticles.isMoreArticles){
-
         if(typeof loadMoreArticles.articleCount == 'undefined')
             loadMoreArticles.articleCount = 16;
         
@@ -107,8 +113,7 @@ function loadMoreArticles(){
                 const buttonID = 'button' + startNum;
                 newsUrl = null;//text.articles[startNum].url;
 
-                feed.innerHTML += '<button id=' + buttonID  + ')">'
-                
+                feed.innerHTML += '<button id=' + buttonID  + '">'
                 //'<button id=button1 onclick="displayArticle("' + text.articles[count].url + '", button1)">'
                                 + '<div class="row rounded bg-secondary m-2 p-2">'
                                 + '<div class="col-2">'
@@ -136,6 +141,7 @@ function loadMoreArticles(){
 
         });
     }
+    //When there is no more articles to load changed the "More" button to "No more articles to display"
     else{
         const feed = document.getElementById("loadMoreButton")
         feed.innerHTML = '<h2> No more articles to display! </h2>'
