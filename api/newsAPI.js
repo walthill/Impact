@@ -10,14 +10,13 @@ const defaultOptions =  'League of Legends OR Super Smash OR Overwatch OR CSGO O
 //POST:     No returns, changes the html of the button to be an iframe of new article
 //PURPOSE:  Launches the desired news article in an iframe within the button that it was pressed
 function displayArticle(newsURL, id) {
-    var newsFeed = document.getElementById(id)  //The button to edit
+    console.log(newsURL + " " + id);
+    var newsFeed = document.getElementById(id);  //The button to edit
 
-    feed.innerHTML = '<button id="' + buttonID + '" onclick="displayArticle(' + newsURL + ', ' + buttonID + ')">'
-                    + '<div class="col-10">'
+    feed.innerHTML = + '<div class="col-10">'
                     + '<iframe src=' + newsURL + '></iframe>'
                     + '</div>'
-                    + '</div>'
-                    + '</button>';
+                    + '</div>';
 } 
 
 
@@ -40,17 +39,21 @@ function printHeadlines() {
                             //text is a JSON object with an array containing all the news information
                             //For a breakdown of the message refer to here:
                             // https://newsapi.org/docs/endpoints/everything
-    var numResponse = text.totalResults;
+    //var numResponse = text.totalResults;
 
-    console.log(numResponse);
-
-    var feed = document.getElementById("feed")
+    const feed = document.getElementById("feed")
 
     var count = 1;
     while(count <= 15){
-        //This prints out the news title followed by the description 
-        var buttonID = 'button' + String(count);
-        feed.innerHTML += '<button id="' + buttonID + '" onclick="displayArticle(' + text.articles[count].url + ', ' + buttonID + ')">'
+        //This prints out the news title followed by the description
+        //console.log(text.articles[count].url); 
+        const buttonID = 'button' + count;
+        newsUrl = text.articles[count].url;
+
+        console.log(buttonID);
+        feed.innerHTML += '<button id=' + buttonID + ' onclick="console.log(' + buttonID + ')">'
+         
+        //'<button id=button1 onclick="displayArticle("' + text.articles[count].url + '", button1)">'
                         + '<div class="row rounded bg-secondary m-2 p-2">'
                         + '<div class="col-2">'
                         + '<img src="'
