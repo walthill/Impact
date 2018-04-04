@@ -1,3 +1,5 @@
+const notifier = require('node-notifier');
+
 const NewsAPI = require('newsapi'); //Importing the news API
 const newsapi = new NewsAPI('f18e802ece204e9280772a9179a6be6c');    //This is our API Key
 const defaultOptions =  'League of Legends OR Super Smash OR Overwatch OR CSGO OR CS:GO' +
@@ -5,7 +7,6 @@ const defaultOptions =  'League of Legends OR Super Smash OR Overwatch OR CSGO O
                         'OR Call of duty OR WoW OR World Of Warcraft';
     //This is a list of all the keywords we're looking for
     //Keep everything in one string seperated by OR
-
 
 //PRE:      None
 //POST:     No returns, just prints news to html
@@ -119,5 +120,6 @@ function favoriteArticle(article) {
         (err) => {
       if (err) throw err;
       console.log('The file has been saved!');
+	  sendNotification('Article Favorited', 'Go to the Favorites page to access the url!');
     });
 }
