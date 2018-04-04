@@ -28,7 +28,7 @@
 	  var myVar;
 
 	function loadAnim() {
-		myVar = setTimeout(showPage, 250);
+		myVar = setTimeout(showPage, 1200);
 	}
 
 	function showPage() {
