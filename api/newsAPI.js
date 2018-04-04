@@ -1,10 +1,12 @@
+const notifier = require('node-notifier');
 const NewsAPI = require('newsapi'); //Importing the news API
 const newsapi = new NewsAPI('f18e802ece204e9280772a9179a6be6c');    //This is our API Key
-const defaultOptions =  'League of Legends OR Super Smash OR Overwatch OR CSGO OR CS:GO' + 
+const defaultOptions =  'League of Legends OR Super Smash OR Overwatch OR CSGO OR CS:GO' +
                         'OR Counter Strike OR PUBG OR Playunknown OR Fortnite OR Dota ' +
                         'OR Call of duty OR WoW OR World Of Warcraft';
     //This is a list of all the keywords we're looking for
     //Keep everything in one string seperated by OR
+
 //PRE:      newsURL: The url we are launching
 //          id: The ID of the button to edit the HTML of
 //POST:     No returns, changes the html of the button to be an iframe of new article
@@ -16,7 +18,7 @@ function displayArticle(newsURL, id) {
                     + '<iframe src=' + newsURL + '></iframe>'
                     + '</div>'
                     + '</div>';
-} 
+}
 
 
 //PRE:      None
@@ -48,10 +50,7 @@ function printHeadlines() {
         newsUrl = null;//text.articles[count].url;
 
         //console.log(buttonID);
-        feed.innerHTML += '<button id=' + buttonID + ' onclick="console.log(' + buttonID + ')">'
-         
-        //'<button id=button1 onclick="displayArticle("' + text.articles[count].url + '", button1)">'
-                        + '<div class="row rounded bg-secondary m-2 p-2">'
+        feed.innerHTML += '<div id=\"' + buttonID + '"\ class=\"row rounded bg-secondary m-2 p-2\">'
                         + '<div class="col-2">'
                         + '<img src="'
 						+ text.articles[count].urlToImage
@@ -62,13 +61,14 @@ function printHeadlines() {
                         + text.articles[count].title + "</h2>"
 						+ "<p>" + text.articles[count].description
                         + "</p>"
-                        //+ "<iframe src=" + text.articles[count].url + "></iframe>"
+                        + "<button class=\"btn btn-dark\" onclick=favoriteArticle(\""
+                        + text.articles[count].url
+                        + "\")>Favorite</button>"
                         + '</div>'
-                        + '</div>'
-                        + '</button>';
+                        + '</div>';
         count++;
     }
-    feed.innerHTML += '<button onclick="loadMoreArticles()">More</button>'
+    feed.innerHTML += '<button class=\"row rounded m-2 p-2 btn\" onclick="loadMoreArticles()">More</button>'
 
   });
 }
@@ -87,7 +87,7 @@ function loadMoreArticles(){
     if(loadMoreArticles.isMoreArticles){
         if(typeof loadMoreArticles.articleCount == 'undefined')
             loadMoreArticles.articleCount = 16;
-        
+
         startNum = loadMoreArticles.articleCount;
         loadMoreArticles.articleCount += 15;
 
@@ -99,7 +99,7 @@ function loadMoreArticles(){
         }).then(response => {
 
             var text = response;
-            console.log(text.totalResults)    
+            console.log(text.totalResults)
             const feed = document.getElementById("feed")
             feed.innerHTML = "";
 
@@ -109,13 +109,11 @@ function loadMoreArticles(){
                     console.log('caught it')
                 }
                 //This prints out the news title followed by the description
-                //console.log(text.articles[count].url); 
+                //console.log(text.articles[count].url);
                 const buttonID = 'button' + startNum;
                 newsUrl = null;//text.articles[startNum].url;
 
-                feed.innerHTML += '<button id=' + buttonID  + '">'
-                //'<button id=button1 onclick="displayArticle("' + text.articles[count].url + '", button1)">'
-                                + '<div class="row rounded bg-secondary m-2 p-2">'
+                feed.innerHTML += '<div id=\"' + buttonID  + '\" class="row rounded bg-secondary m-2 p-2">'
                                 + '<div class="col-2">'
                                 + '<img src="'
                                 + text.articles[startNum].urlToImage
@@ -126,7 +124,9 @@ function loadMoreArticles(){
                                 + text.articles[startNum].title + "</h2>"
                                 + "<p>" + text.articles[startNum].description
                                 + "</p>"
-                                //+ "<iframe src=" + text.articles[startNum].url + "></iframe>"
+                                + "<button class=\"btn btn-dark\" onclick=favoriteArticle(\""
+                                + text.articles[startNum].url
+                                + "\")>Favorite</button>"
                                 + '</div>'
                                 + '</div>'
                                 + '</button>';
@@ -134,7 +134,7 @@ function loadMoreArticles(){
                 if(startNum == text.totalResults - 1)
                     loadMoreArticles.isMoreArticles = false;
             }
-            feed.innerHTML += '<button id="loadMoreButton" onclick="loadMoreArticles()">More</button>'
+            feed.innerHTML += '<button class=\"row rounded m-2 p-2 btn\" id="loadMoreButton" onclick="loadMoreArticles()">More</button>'
 
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
@@ -151,7 +151,7 @@ function loadMoreArticles(){
 
 //Pre:      userOptions is a string containing the user inputted search options
 //Post:     No returns, all user options will be searched and printed
-//Purpose:  This is exactally the same as the function above except it searches for 
+//Purpose:  This is exactally the same as the function above except it searches for
 //          the user options instead of our default.
 //          Additionally keeps a string compiled of all user options so they can continue adding more options
 function printUserHeadlines(userOption){
@@ -200,3 +200,14 @@ function printUserHeadlines(userOption){
   });
 }
 
+function favoriteArticle(article) {
+
+    var fs = require('fs')
+
+    fs.appendFile('favorites.txt', article + "\n",
+        (err) => {
+      if (err) throw err;
+      console.log('The file has been saved!');
+	  sendNotification('Article Favorited', 'Go to the Favorites page to access the url!');
+    });
+}
