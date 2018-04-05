@@ -3,15 +3,18 @@ Your Project Maintainer is **Walter**
 
 # Impact ![alt text](https://github.com/CSI280-S17/Montpelier/blob/master/media/icon64.png)
 
-Impact is your one stop shop for Esports news. Get daily esports headlines and keep up with the top streamers all from within the application.
-Impact runs cross-platform as a native desktop application through the [Electron.js](https://electronjs.org/) framework 
+Impact is your one stop shop for Esports news. Get daily esports headlines and keep up with the top streamers all from within the comfort of our desktop app.
+Impact runs cross-platform as a native desktop client through the [Electron.js](https://electronjs.org/) framework 
 
 Planned Features:
 * Article Searching
-* Bookmarking Articles
 * Filtering
+* [Mixer API](https://dev.mixer.com/) integration
+
+Implemented Features:
+* Bookmarking Articles
 * [News API](https://newsapi.org/) integration
-* [Twitch API](https://dev.twitch.tv/) integration
+
 
 ## Building
 1. Install Node.js and NPM
