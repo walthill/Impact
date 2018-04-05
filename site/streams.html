@@ -10,15 +10,22 @@
     <!-- Load the Twitch embed script -->
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
-	<head>
+	  <head>
       <meta charset="UTF-8">
       <title>Impact</title>
     </head>
     <body>
-    <header class="jumbotron">
-      <h1>Streaming Now</h1>
-    </header>
-
+      <div class="container-fluid">
+        <header class="row justify-content-md-center">
+          <div class="col-md-2 text-center">
+            <img src="../media/logoRedesign.png" alt="Impact Logo" class="img-fluid" style="max-width: 200px;">
+          </div>
+          <div class="col-md-10 text-center">
+            <img src="../media/impactRedesign.png" alt="Impact Logo Lettering" class="img-fluid" style="max-width: 450px;">
+          </div>
+        </header>
+      </div>
+  
     <div class="container-fluid">
         <div class="row bg-light">
             <nav class="col-md-2 bg-dark fixed">
@@ -37,44 +44,8 @@
                 <li class="list-inline-item" ><a href=""><i class="fab fa-github-square fa-2x"></i></a></li>
               </ul>
             </nav>
-            <div class="col-md-10 rounded" id="twitchFeed">
-                <!-- Main content goes here -->
-                <h1><strong>Twitch Streams</strong> <em>(by # of followers)</em></h1>
-              <!-- Playing around with the Twitch interactive frame (NOT THE API) -->
-                    <!-- Add a placeholder for the Twitch embed -->
-              <h2>1.) <strong>Ninja</strong></h2>
-              <div id="twitch-embed1"></div>
-              <h2>2.) <strong>Summit1g</strong></h2>
-              <div id="twitch-embed2"></div>
-              <h2>3.) <strong>Riotgames</strong></h2>
-              <div id="twitch-embed3"></div>
-
-              <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
-              <script type="text/javascript">
-                new Twitch.Embed("twitch-embed1", {
-                  width: 854,
-                  height: 480,
-                  channel: "ninja",
-                  autoplay: false
-
-                });
-              </script>
-              <script type="text/javascript">
-                new Twitch.Embed("twitch-embed2", {
-                  width: 854,
-                  height: 480,
-                  channel: "summit1g",
-                  autoplay: false
-                });
-              </script>
-              <script type="text/javascript">
-                new Twitch.Embed("twitch-embed3", {
-                  width: 854,
-                  height: 480,
-                  channel: "riotgames",
-                  autoplay: false
-                });
-              </script>
+            <div class="col-md-10 rounded" id="streamsFeed">
+              <!-- Streams go here -->
             </div>
         </div>
 
@@ -83,5 +54,5 @@
 
     <footer class="footer">
     </footer>
-    </body>
+  </body>
   </html>
