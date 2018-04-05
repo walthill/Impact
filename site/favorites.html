@@ -4,8 +4,39 @@
 
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-    <script src="../js/favorites.js"></script>
+
+    <script>
+        var fs = require('fs')
+
+        fs.readFile("favorites.txt", "utf8", (err, data) => {
+          if (err) throw err;
+          favs = document.getElementById("favorites")
+          var links = data.split(/,| |\n/)
+          for(i = 0; i < links.length - 1; i++) {
+            favs.innerHTML += "<li class=\"list-group-item\">"
+                            + "<button class=\"btn btn-outline-danger\" "
+                            + "onClick=unfavorite(\"" + links[i] + "\")>"
+                            + "Unfavorite"
+                            + "</button> "
+                            + links[i]
+                            + "</li>"
+          }
+        });
+
+        function unfavorite(link) {
+            fs.readFile("favorites.txt", "utf8", (err, data) => {
+              if (err) throw err;
+
+              var newdata = data.replace(link + '\n', '')
+              fs.writeFile('favorites.txt', newdata,
+                  (err) => {
+                if (err) throw err;
+                console.log('The file has been saved!');
+              });
+            });
+            window.location.reload(false);
+        }
+    </script>
 
 	<head>
         <meta charset="UTF-8">
@@ -33,12 +64,7 @@
                     <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="streams.html">Streams</a></li>
                     <li class="nav-item"><a class="nav-link" href="">About Us</a></li>
-                  </ul>
-                  <ul class="list-inline text-center">
-                    <li class="list-inline-item" ><a href=""><i class="fab fa-facebook fa-2x"></i></a></li>
-                    <li class="list-inline-item" ><a href=""><i class="fab fa-twitter-square fa-2x"></i></a></li>
-                    <li class="list-inline-item" ><a href=""><i class="fab fa-twitch fa-2x"></i></a></li>
-                    <li class="list-inline-item" ><a href=""><i class="fab fa-github-square fa-2x"></i></a></li>
+
                   </ul>
                 </nav>
                 <div class="col-md-10 rounded">

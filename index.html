@@ -4,21 +4,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/loadAnim.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
     <script src="api/newsAPI.js"></script>
     <script src="js/scrollButton.js"></script>
-    <script src="js/loadAnim.js"></script>
-    <script src="js/index.js"></script>
+    <script>
+      const notifier = require('node-notifier');
+      // String
+      //notifier.notify('Message');
 
+      // Object
+      /*notifier.notify({
+        title: 'My notification',
+        message: 'Hello, there!'
+      });*/
+
+      //This is temporary code to test notifications
+      function testNotification()
+      {
+        notifier.notify({
+          title: 'Home Link notification',
+          message: 'Hello there!'
+        });
+      }
+
+      //This function fixes the problem if the article has
+      //a broken image file or link.
+      function SRCcheck(image){
+        image.onerror = null;
+        image.src = "media/default.png";
+      }
+
+      printHeadlines();
+
+	</script>
 	<head>
       <meta charset="UTF-8">
       <title>Impact</title>
     </head>
-    <body onload="loadAnim()">
-
-		<div class="container-fluid">
+    <body>
+        <div class="container-fluid">
             <header class="row justify-content-md-center">
               <div class="col-md-2 text-center">
                 <img src="media/logoRedesign.png" alt="Impact Logo" class="img-fluid" style="max-width: 200px;">
@@ -29,40 +53,26 @@
             </header>
         </div>
 
-		<div id="loader">
-			<div class="cssload-thecube">
-				<div class="cssload-cube cssload-c1"></div>
-				<div class="cssload-cube cssload-c2"></div>
-				<div class="cssload-cube cssload-c4"></div>
-				<div class="cssload-cube cssload-c3"></div>
-			</div>
-		</div>
 
-		<div style="display:none;" id="myDiv" class="animate-bottom container-fluid">
-			<div class="row bg-light">
-				<nav class="col-md-2 bg-dark fixed">
-				  <!--Sidebar content-->
-				  <ul class="nav nav-pills nav-fill flex-column py-3">
-					<li class="nav-item"><a class="nav-link active" href="">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="site/favorites.html">Favorites</a></li>
-					<li class="nav-item"><a class="nav-link" href="site/news.html">News</a></li>
-					<li class="nav-item"><a class="nav-link" href="site/streams.html">Streams</a></li>
-					<li class="nav-item"><a class="nav-link" href="site/about.html">About Us</a></li>
-				  </ul>
-                  <ul class="list-inline text-center">
-                    <li class="list-inline-item" ><a href=""><i class="fab fa-facebook fa-2x"></i></a></li>
-                    <li class="list-inline-item" ><a href=""><i class="fab fa-twitter-square fa-2x"></i></a></li>
-                    <li class="list-inline-item" ><a href=""><i class="fab fa-twitch fa-2x"></i></a></li>
-                    <li class="list-inline-item" ><a href=""><i class="fab fa-github-square fa-2x"></i></a></li>
-                  </ul>
-				</nav>
-				<div class="col-md-10 rounded" id="feed">
-					<!-- Main content goes here -->
-				</div>
-			</div>
+    <div class="container-fluid">
+        <div class="row bg-light">
+            <nav class="col-md-2 bg-dark fixed">
+              <!--Sidebar content-->
+              <ul class="nav nav-pills nav-fill flex-column py-3">
+                <li class="nav-item"><a class="nav-link active" href="">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="site/favorites.html">Favorites</a></li>
+                <li class="nav-item"><a class="nav-link" href="site/news.html">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="site/streams.html">Streams</a></li>
+                <li class="nav-item"><a class="nav-link" href="site/about.html">About Us</a></li>
+              </ul>
+            </nav>
+            <div class="col-md-10 rounded" id="feed">
+                <!-- Main content goes here -->
+            </div>
+        </div>
 
-			<button class="btn btn-success" onclick="toTop()" id="topButton">Top</button>
-		</div>
+        <button class="btn btn-success" onclick="toTop()" id="topButton">Top</button>
+    </div>
 
 
     <footer class="footer">
