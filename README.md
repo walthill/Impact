@@ -1,7 +1,7 @@
   *Rewrite this readme as a team.*
 Your Project Maintainer is **Walter**
 
-# Impact ![alt text](https://github.com/CSI280-S17/Montpelier/blob/master/media/icon64.png)
+# Impact ![alt text](https://github.com/CSI280-S17/Montpelier/blob/master/media/logoRedesign64.png)
 
 Impact is your one stop shop for Esports news. Get daily esports headlines and keep up with the top streamers all from within the comfort of our desktop app.
 Impact runs cross-platform as a native desktop client through the [Electron.js](https://electronjs.org/) framework 
