@@ -42,10 +42,10 @@ function topHeadlineCarousel() {
     var count = 1;
     while(count <= 3){
         if(count == 1){
-            headlineClass="item active"
+            headlineClass="carousel-item active"
         }
         else{
-           headlineClass="item"
+           headlineClass="carousel-item"
         }
         Carousel.innerHTML += '<div class=\"' + headlineClass + '">'
                             + '<img src="' + text.articles[count].urlToImage +'">'
