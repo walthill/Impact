@@ -19,6 +19,7 @@
     "electron": "^1.8.4"
   },
   "dependencies": {
+    "beam-client-node": "^1.0.3",
     "bootstrap": "^4.0.0",
     "electron-context-menu": "^0.9.1",
     "jquery": "^1.9.1",
