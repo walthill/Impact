@@ -63,3 +63,18 @@ nav div.logo-container {
           cursor: pointer; }
 
 /*# sourceMappingURL=styles.css.map */
+
+/* CSS for said quiz http://www.hungrypiranha.org/make-a-website/html-quiz */
+#categorylist { 
+  margin-top: 6px; 
+  display: none; 
+  } 
+  
+  #category1, #category2, #category3, #category4, #category5{ 
+  display: none; 
+  }
+  
+  #closing {
+  display: none;
+  font-style: italic;
+  }
