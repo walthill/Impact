@@ -1,3 +1,4 @@
+topHeadlineCarousel();
 printHeadlines();
 
 function sendNotification(titleStr, messageStr) {

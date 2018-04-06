@@ -20,6 +20,51 @@ function displayArticle(newsURL, id) {
                     + '</div>';
 }
 
+function topHeadlineCarousel() {
+    //News API object
+    //The everything keyword queries from everything
+    //Can change to 'topHeadlines' for top headlines
+    newsapi.v2.everything({
+        //pageSize: 100,
+        sortBy: 'popularity',
+        q: defaultOptions,    //The keywords to search for
+        language: 'en'      //The language desired for news
+    }).then(response => {
+
+    var text = response;    //Response is what we get back, asssigning it to a variable
+                            //text is a JSON object with an array containing all the news information
+                            //For a breakdown of the message refer to here:
+                            // https://newsapi.org/docs/endpoints/everything
+    //var numResponse = text.totalResults;
+
+    const Carousel = document.getElementById("topHeadlineCarousel")
+    var headlineClass;
+    var count = 1;
+    while(count <= 3){
+        if(count == 1){
+            headlineClass="item active"
+        }
+        else{
+           headlineClass="item"
+        }
+        Carousel.innerHTML += '<div class=\"' + headlineClass + '">'
+                            + '<img src="' + text.articles[count].urlToImage +'">'
+                            + '<div class="carousel-caption">'
+                            + '<h3>' + text.articles[count].title + '</h3>'
+                            + '<p>' + text.articles[count].description
+                            + "<button class=\"btn btn-dark\" onclick=favoriteArticle(\""
+                            + text.articles[count].url
+                            + "\")>Favorite</button>"
+                            + '</p>'
+                            + '</div>'
+                            + '</div>';
+        count++;
+    }
+    //Carousel.innerHTML += '<button class=\"row rounded m-2 p-2 btn\" onclick="loadMoreArticles()">More</button>'
+
+  });
+}
+
 
 //PRE:      None
 //POST:     No returns, just prints news to html
