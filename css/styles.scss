@@ -14,6 +14,27 @@ div.carousel-item
     height: 400px;
     object-fit: cover;
   }
+
+  .carousel-caption
+  {
+    bottom: 3rem !important;
+    padding: 1rem !important;
+    color: #000 !important;
+    background: rgba(255,255,255,0.85);
+
+    a
+    {
+      font-size: 26px;
+      font-weight: 700;
+      color: #236192;
+
+      &:hover
+      {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 .fixed {

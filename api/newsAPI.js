@@ -50,12 +50,12 @@ function topHeadlineCarousel() {
         Carousel.innerHTML += '<div class=\"' + headlineClass + '">'
                             + '<img src="' + text.articles[count].urlToImage +'">'
                             + '<div class="carousel-caption">'
-                            + '<h3>' + text.articles[count].title + '</h3>'
+                            + '<a href="' + text.articles[count].url + '" target="_blank">' + text.articles[count].title + '</a>'
                             + '<p>' + text.articles[count].description
+                            + '</p>'
                             + "<button class=\"btn btn-dark\" onclick=favoriteArticle(\""
                             + text.articles[count].url
                             + "\")>Favorite</button>"
-                            + '</p>'
                             + '</div>'
                             + '</div>';
         count++;
