@@ -92,6 +92,7 @@ nav
   {
     padding: 0;
     background: #fff !important;
+    position: relative;
 
     img.article-thumb
     {
@@ -103,6 +104,10 @@ nav
     div.article-details
     {
       padding: 1rem;
+      height: calc(100% - 200px);
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
 
       p.article-title a
       {
