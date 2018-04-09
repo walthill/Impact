@@ -50,12 +50,12 @@ function topHeadlineCarousel() {
         Carousel.innerHTML += '<div class=\"' + headlineClass + '">'
                             + '<img src="' + text.articles[count].urlToImage +'">'
                             + '<div class="carousel-caption">'
-                            + '<h3>' + text.articles[count].title + '</h3>'
+                            + '<a href="' + text.articles[count].url + '" target="_blank">' + text.articles[count].title + '</a>'
                             + '<p>' + text.articles[count].description
+                            + '</p>'
                             + "<button class=\"btn btn-dark\" onclick=favoriteArticle(\""
                             + text.articles[count].url
                             + "\")>Favorite</button>"
-                            + '</p>'
                             + '</div>'
                             + '</div>';
         count++;
@@ -94,13 +94,15 @@ function printHeadlines() {
                 newsHTML +='<div id="' + buttonID + '" class="article bg-secondary">' +
                     '           <img class="article-thumb" src="' + response.articles[count].urlToImage + '" onerror="SRCcheck(this)">' +
                     '           <div class="article-details">' +
-                    '               <p class="article-title">' +
-                    '                   <a href="' + response.articles[count].url + '" target="_blank">' +
-                    '                       ' + count + ': ' + response.articles[count].title + '' +
-                    '                   </a>' +
-                    '               </p>' +
-                    '               <p class="article-source">By: ' + response.articles[count].source.name + '</p>' +
-                    '               <p class="article-desc">' + response.articles[count].description + '</p>' +
+                    '               <div>' +
+                    '                   <p class="article-title">' +
+                    '                       <a href="' + response.articles[count].url + '" target="_blank">' +
+                    '                           ' + count + ': ' + response.articles[count].title + '' +
+                    '                       </a>' +
+                    '                   </p>' +
+                    '                   <p class="article-source">By: ' + response.articles[count].source.name + '</p>' +
+                    '                   <p class="article-desc">' + response.articles[count].description + '</p>' +
+                    '               </div>' +
                     '               <button class="btn btn-dark" onclick=favoriteArticle("' + response.articles[count].url + '")>Favorite</button>' +
                     '           </div>' +
                     '       </div>';
@@ -158,13 +160,15 @@ function loadMoreArticles(){
                     newsHTML +='<div id="' + buttonID + '" class="article bg-secondary">' +
                         '           <img class="article-thumb" src="' + response.articles[count].urlToImage + '" onerror="SRCcheck(this)">' +
                         '           <div class="article-details">' +
-                        '               <p class="article-title">' +
-                        '                   <a href="' + response.articles[count].url + '" target="_blank">' +
-                        '                       ' + count + ': ' + response.articles[count].title + '' +
-                        '                   </a>' +
-                        '               </p>' +
-                        '               <p class="article-source">By: ' + response.articles[count].source.name + '</p>' +
-                        '               <p class="article-desc">' + response.articles[count].description + '</p>' +
+                        '               <div>' +
+                        '                   <p class="article-title">' +
+                        '                       <a href="' + response.articles[count].url + '" target="_blank">' +
+                        '                           ' + count + ': ' + response.articles[count].title + '' +
+                        '                      </a>' +
+                        '                   </p>' +
+                        '                   <p class="article-source">By: ' + response.articles[count].source.name + '</p>' +
+                        '                   <p class="article-desc">' + response.articles[count].description + '</p>' +
+                        '               </div>' +
                         '               <button class="btn btn-dark" onclick=favoriteArticle("' + response.articles[count].url + '")>Favorite</button>' +
                         '           </div>' +
                         '       </div>';

@@ -3,6 +3,25 @@
   width: 100%;
   height: auto; }
 
+div.carousel-item {
+  max-height: 400px; }
+  div.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; }
+  div.carousel-item .carousel-caption {
+    bottom: 3rem !important;
+    padding: 1rem !important;
+    color: #000 !important;
+    background: rgba(255, 255, 255, 0.85); }
+    div.carousel-item .carousel-caption a {
+      font-size: 26px;
+      font-weight: 700;
+      color: #236192; }
+      div.carousel-item .carousel-caption a:hover {
+        text-decoration: underline;
+        cursor: pointer; }
+
 .fixed {
   position: fixed;
   width: 25%; }
@@ -10,12 +29,6 @@
 .scrollit {
   float: left;
   width: 71%; }
-
-.carousel-inner img {
-  width: auto;
-  height: 400px;
-  max-height: 400px;
-}
 
 #topButton {
   display: none;
@@ -47,13 +60,18 @@ nav div.logo-container {
   padding-top: 0.5rem; }
   #feed div.article {
     padding: 0;
-    background: #fff !important; }
+    background: #fff !important;
+    position: relative; }
     #feed div.article img.article-thumb {
       width: 100%;
       height: 200px;
       object-fit: cover; }
     #feed div.article div.article-details {
-      padding: 1rem; }
+      padding: 1rem;
+      height: calc(100% - 200px);
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between; }
       #feed div.article div.article-details p.article-title a {
         font-size: 18px;
         font-weight: 700;
@@ -63,18 +81,3 @@ nav div.logo-container {
           cursor: pointer; }
 
 /*# sourceMappingURL=styles.css.map */
-
-/* CSS for said quiz http://www.hungrypiranha.org/make-a-website/html-quiz */
-#categorylist { 
-  margin-top: 6px; 
-  display: none; 
-  } 
-  
-  #category1, #category2, #category3, #category4, #category5{ 
-  display: none; 
-  }
-  
-  #closing {
-  display: none;
-  font-style: italic;
-  }
