@@ -1,177 +1,186 @@
 <!DOCTYPE html>
-  <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 
-    <script src="../js/scrollButton.js"></script>
+<script src="../js/scrollButton.js"></script>
+<script>
+    function showAnswers() {
+        answers = document.getElementById("answers")
 
-	<head>
-      <meta charset="UTF-8">
-      <title>Impact</title>
-    </head>
-    <body>
+        if (answers.style.display === "none") {
+            answers.style.display = "inherit"
+        }
+        else {
+            answers.style.display = "none"
+        }
+    }
+</script>
 
+<head>
+    <meta charset="UTF-8">
+    <title>Impact</title>
+</head>
+<body>
     <div class="container-fluid">
         <div id="content" class="row bg-light">
             <nav class="col-md-2 bg-dark fixed">
-              <!--Sidebar content-->
+                <!--Sidebar content-->
                 <div class="logo-container">
                     <img src="../media/logoRedesign.png" alt="Impact Logo" class="img-fluid" style="max-width: 200px;">
                     <img src="../media/impactRedesign.png" alt="Impact Logo Lettering" class="img-fluid" style="max-width: 450px;">
                 </div>
-              <ul class="nav nav-pills nav-fill flex-column py-3">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="favorites.html">Favorites</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-                <li class="nav-item"><a class="nav-link" href="streams.html">Streams</a></li>
-                <li class="nav-item"><a class="nav-link active" href="">About Us</a></li>
-              </ul>
-              <ul class="list-inline text-center">
-                <li class="list-inline-item" ><a href=""><i class="fab fa-facebook fa-2x"></i></a></li>
-                <li class="list-inline-item" ><a href=""><i class="fab fa-twitter-square fa-2x"></i></a></li>
-                <li class="list-inline-item" ><a href=""><i class="fab fa-twitch fa-2x"></i></a></li>
-                <li class="list-inline-item" ><a href=""><i class="fab fa-github-square fa-2x"></i></a></li>
-              </ul>
+                <ul class="nav nav-pills nav-fill flex-column py-3">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="favorites.html">Favorites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="streams.html">Streams</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="">About Us</a></li>
+                </ul>
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item" ><a href=""><i class="fab fa-facebook fa-2x"></i></a></li>
+                    <li class="list-inline-item" ><a href=""><i class="fab fa-twitter-square fa-2x"></i></a></li>
+                    <li class="list-inline-item" ><a href=""><i class="fab fa-twitch fa-2x"></i></a></li>
+                    <li class="list-inline-item" ><a href=""><i class="fab fa-github-square fa-2x"></i></a></li>
+                </ul>
             </nav>
             <div class="col-md-10 rounded">
                 <!-- Main content goes here -->
-                  <!-- Main content goes here -->
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <div class="card bg-dark" style="width: 18rem;">
-                          <img class="card-img-top" src="https://avatars1.githubusercontent.com/u/5782089?s=400&v=4" alt="TJ">
-                          <div class="card-body">
-                            <h5 class="card-title">TJ</h5>
-                            <p class="card-text">Thomas (TJ) Leach is the man with a plan</p>
-                            <a href="#" class="btn btn-primary">Git Hub Profile</a>
-                          </div>
+                <div class="row">
+                    <div class="col-sm-4 p-2">
+                        <div class="card text-white bg-secondary" style="max-width:300px">
+                            <img class="card-img-top" src="https://avatars1.githubusercontent.com/u/5782089?s=400&v=4" alt="TJ">
+                            <div class="card-body">
+                                <h5 class="card-title">Thomas (TJ) Leach</h5>
+                                <p class="card-text">TJ is the man with a plan.</p>
+                                <a href="#" class="btn btn-primary">Git Hub Profile</a>
+                            </div>
                         </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="card bg-dark" style="width: 18rem;">
+                    </div>
+                    <div class="col-sm-4 p-2">
+                        <div class="card text-white bg-secondary" style="max-width:300px">
                             <img class="card-img-top" src="https://avatars1.githubusercontent.com/u/35467456?s=460&v=4" alt="Julian">
                             <div class="card-body">
-                              <h5 class="card-title">Julian</h5>
-                              <p class="card-text">Julian puts the J in java script</p>
-                              <a href="#" class="btn btn-primary">Git Hub Profile</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="card bg-dark" style="width: 18rem;">
-                                <img class="card-img-top" src="https://avatars2.githubusercontent.com/u/35465500?s=460&v=4" alt="Tim">
-                                <div class="card-body">
-                                  <h5 class="card-title">Tim</h5>
-                                  <p class="card-text">Tim is great with twitch</p>
-                                  <a href="#" class="btn btn-primary">Git Hub Profile</a>
-                                </div>
-                              </div>
-                            </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-sm-4">
-                          <div class="card bg-dark" style="width: 18rem;">
-                              <img class="card-img-top" src="https://avatars1.githubusercontent.com/u/13681476?s=460&v=4" alt="Walter">
-                              <div class="card-body">
-                                <h5 class="card-title">Walter</h5>
-                                <p class="card-text">Walt's got no faults. Repo Maintainer</p>
+                                <h5 class="card-title">Julian</h5>
+                                <p class="card-text">Julian puts the J in java script.</p>
                                 <a href="#" class="btn btn-primary">Git Hub Profile</a>
-                              </div>
                             </div>
-                       </div>
-                          <div class="col-sm-4">
-                              <div class="card bg-dark" style="width: 18rem;">
-                                  <img class="card-img-top" src="https://avatars3.githubusercontent.com/u/35499106?s=460&v=4" alt="Tyler">
-                                  <div class="card-body">
-                                    <h5 class="card-title">Tyler</h5>
-                                    <p class="card-text">Testing Tyler</p>
-                                    <a href="#" class="btn btn-primary">Git Hub Profile</a>
-                                  </div>
-                                </div>
-                          </div>
+                        </div>
                     </div>
-                  </div>
-  
-                  <!-- Esports quiz adapted from this website quiz http://www.hungrypiranha.org/make-a-website/html-quiz -->
-                  <div class="row">
-                    <h2 class="text-center">ESports Quiz</h2>
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <p class="question">1. What was the largest League of Legends prize pool?</p>
-                        <ul class="answers">
-                          <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">$4.8 million</label><br/>
-                          <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">$2.1 million</label><br/>
-                          <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">$1.1 million</label><br/>
-                          <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">$700k</label><br/>
-                        </ul>
-                      </div>
-                      <div class="col-sm-6">
-                        <p class="question">2. What game had the most money up for grabs in tournaments in 2017</p>
-                        <ul class="answers">
-                          <input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Dota 2</label><br/>
-                          <input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Leauge of Legends</label><br/>
-                          <input type="radio" name="q2" value="c" id="q2c"><label for="q2c">CSGO</label><br/>
-                          <input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Overwatch</label><br/>
-                        </ul>
-                      </div>
+                    <div class="col-sm-4 p-2">
+                        <div class="card text-white bg-secondary" style="max-width:300px">
+                            <img class="card-img-top" src="https://avatars2.githubusercontent.com/u/35465500?s=460&v=4" alt="Tim">
+                            <div class="card-body">
+                                <h5 class="card-title">Tim</h5>
+                                <p class="card-text">Tim is great with twitch.</p>
+                                <a href="#" class="btn btn-primary">Git Hub Profile</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <p class="question">3. What team has earned the most money to date?</p>
-                        <ul class="answers">
-                          <input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Virtus.pro</label><br/>
-                          <input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Cloud9</label><br/>
-                          <input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Fnatic</label><br/>
-                          <input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Team Liquid</label><br/>
-                        </ul>
-                      </div>
-                      <div class="col-sm-6">
-                        <p class="question">4. Which is not a MOBA or Multiplayer Online Battle Arena?</p>
-                        <ul class="answers">
-                          <input type="radio" name="q4" value="a" id="q4a"><label for="q4a">League of Legends</label><br/>
-                          <input type="radio" name="q4" value="b" id="q4b"><label for="q4b">Smite</label><br/>
-                          <input type="radio" name="q4" value="c" id="q4c"><label for="q4c">Dota 2</label><br/>
-                          <input type="radio" name="q4" value="d" id="q4d"><label for="q4d">CSGO</label><br/>
-                        </ul>
-                      </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 p-2">
+                        <div class="card text-white bg-secondary" style="max-width:300px">
+                            <img class="card-img-top" src="https://avatars1.githubusercontent.com/u/13681476?s=460&v=4" alt="Walter">
+                            <div class="card-body">
+                                <h5 class="card-title">Walter</h5>
+                                <p class="card-text">Walt's got no faults. Repo Maintainer.</p>
+                                <a href="#" class="btn btn-primary">Git Hub Profile</a>
+                            </div>
+                        </div>
                     </div>
-  
-                    <div id="results" class="btn btn-primary ml-4">            
-                        Answers please.       
+                    <div class="col-sm-4 p-2">
+                        <div class="card text-white bg-secondary" style="max-width:300px">
+                            <img class="card-img-top" src="https://avatars3.githubusercontent.com/u/35499106?s=460&v=4" alt="Tyler">
+                            <div class="card-body">
+                                <h5 class="card-title">Tyler</h5>
+                                <p class="card-text">Testing Tyler.</p>
+                                <a href="#" class="btn btn-primary">Git Hub Profile</a>
+                            </div>
+                        </div>
                     </div>
-  
-                    <div id="category1">            
-                        <p><strong>Question 1:</strong> The correct answer is the <strong>b</strong>.</p>        
-                    </div>        
-                        
-                    <div id="category2">            
-                        <p><strong>Question 2:</strong> The correct answer is <strong>a</strong>.</p>        
-                    </div>        
-                        
-                    <div id="category3">            
-                        <p><strong>Question 3:</strong> The correct answer is <strong>d</strong>.</p>        
-                    </div>        
-                        
-                    <div id="category4">            
-                        <p><strong>Question 4:</strong> The correct answer is <strong>d</strong>.</p>        
-                    </div>        
-                        
-                    <div id="category5">            
-                        <p>You answered Right!</p>        
-                    </div>        
-                    
-                  </div>
+                </div>
+
+                <!-- Esports quiz adapted from this website quiz http://www.hungrypiranha.org/make-a-website/html-quiz -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="text-center">ESports Quiz</h2>
+                    </div>
+                    <div class="row m-2">
+                        <div class="col-sm-6">
+                            <p class="question">1. What was the largest League of Legends prize pool?</p>
+                            <ul class="answers">
+                                <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">$4.8 million</label><br/>
+                                <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">$2.1 million</label><br/>
+                                <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">$1.1 million</label><br/>
+                                <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">$700k</label><br/>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="question">2. What game had the most money up for grabs in tournaments in 2017</p>
+                            <ul class="answers">
+                                <input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Dota 2</label><br/>
+                                <input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Leauge of Legends</label><br/>
+                                <input type="radio" name="q2" value="c" id="q2c"><label for="q2c">CSGO</label><br/>
+                                <input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Overwatch</label><br/>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="question">3. What team has earned the most money to date?</p>
+                            <ul class="answers">
+                                <input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Virtus.pro</label><br/>
+                                <input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Cloud9</label><br/>
+                                <input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Fnatic</label><br/>
+                                <input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Team Liquid</label><br/>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="question">4. Which is not a MOBA or Multiplayer Online Battle Arena?</p>
+                            <ul class="answers">
+                                <input type="radio" name="q4" value="a" id="q4a"><label for="q4a">League of Legends</label><br/>
+                                <input type="radio" name="q4" value="b" id="q4b"><label for="q4b">Smite</label><br/>
+                                <input type="radio" name="q4" value="c" id="q4c"><label for="q4c">Dota 2</label><br/>
+                                <input type="radio" name="q4" value="d" id="q4d"><label for="q4d">CSGO</label><br/>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div id="results" class="btn btn-primary m-4" onclick="showAnswers()">
+                            Answers please.
+                        </div>
+
+                        <div id="answers" style="display: none;">
+                            <div id="category1">
+                                <p><strong>Question 1:</strong> The correct answer is the <strong>b</strong>.</p>
+                            </div>
+
+                            <div id="category2">
+                                <p><strong>Question 2:</strong> The correct answer is <strong>a</strong>.</p>
+                            </div>
+
+                            <div id="category3">
+                                <p><strong>Question 3:</strong> The correct answer is <strong>d</strong>.</p>
+                            </div>
+
+                            <div id="category4">
+                                <p><strong>Question 4:</strong> The correct answer is <strong>d</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <button onclick="toTop()" id="topButton">Top</button>
     </div>
+</div>
 
-    <footer class="footer">
-    </footer>
-    </body>
-  </html>
+<button class="btn btn-success" onclick="toTop()" id="topButton">Top</button>
+</div>
+
+<footer class="footer">
+</footer>
+</body>
+</html>
