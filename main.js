@@ -35,9 +35,16 @@ const appMenuTemplate = [
         role: 'help',
         submenu: [
             {role: 'toggledevtools'},
+			 {type: 'separator'},
             {
               label: 'Learn More',
               click(){require('electron').shell.openExternal('https://github.com/CSI280-S17/Montpelier')}
+			  
+            },
+			{
+              label: 'License',
+              click(){require('electron').shell.openExternal('https://www.apache.org/licenses/LICENSE-2.0.html')}
+			  
             }
         ]
     }

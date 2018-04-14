@@ -51,11 +51,10 @@ function topHeadlineCarousel() {
                             + '<img src="' + text.articles[count].urlToImage +'">'
                             + '<div class="carousel-caption">'
                             + '<a href="' + text.articles[count].url + '" target="_blank">' + text.articles[count].title + '</a>'
-                            + '<p>' + text.articles[count].description
-                            + '</p>'
+                            + '<p>'
                             + "<button class=\"btn btn-dark\" onclick=favoriteArticle(\""
                             + text.articles[count].url
-                            + "\")>Favorite</button>"
+                            + "\")>Favorite</button></p>"
                             + '</div>'
                             + '</div>';
         count++;
@@ -100,7 +99,7 @@ function printHeadlines() {
                     '                           ' + count + ': ' + response.articles[count].title + '' +
                     '                       </a>' +
                     '                   </p>' +
-                    '                   <p class="article-source">By: ' + response.articles[count].source.name + '</p>' +
+                    '                   <p class="article-source"><strong>' + response.articles[count].source.name + '</strong></p>' +
                     '                   <p class="article-desc">' + response.articles[count].description + '</p>' +
                     '               </div>' +
                     '               <button class="btn btn-dark" onclick=favoriteArticle("' + response.articles[count].url + '")>Favorite</button>' +
