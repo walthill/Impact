@@ -1,87 +1,70 @@
 <!DOCTYPE html>
-  <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-    <script src="js/scrollButton.js"></script>
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+<script src="js/scrollButton.js"></script>
 
-    <!-- Load the Twitch embed script -->
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
-
-	<head>
-      <meta charset="UTF-8">
-      <title>Impact</title>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Impact</title>
+</head>
+<body>
     <div class="container-fluid">
         <div id="content" class="row bg-light">
             <nav class="col-md-2 bg-dark fixed">
-              <!--Sidebar content-->
-              <div class="logo-container">
-                <img src="../media/logoRedesign.png" alt="Impact Logo" class="img-fluid" style="max-width: 200px;">
-                <img src="../media/impactRedesign.png" alt="Impact Logo Lettering" class="img-fluid" style="max-width: 450px;">
-              </div>
-              <ul class="nav nav-pills nav-fill flex-column py-3">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="favorites.html">Favorites</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-                <li class="nav-item"><a class="nav-link active" href="">Streams</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-              </ul>
-              <ul class="list-inline text-center">
+                <!--Sidebar content-->
+                <div class="logo-container">
+                    <img src="../media/logoRedesign.png" alt="Impact Logo" class="img-fluid" style="max-width: 200px;">
+                    <img src="../media/impactRedesign.png" alt="Impact Logo Lettering" class="img-fluid" style="max-width: 450px;">
+                </div>
+                <ul class="nav nav-pills nav-fill flex-column py-3">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="favorites.html">Favorites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="">Streams</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                </ul>
+                <ul class="list-inline text-center">
                     <li class="list-inline-item" ><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a></li>
                     <li class="list-inline-item" ><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a></li>
                     <li class="list-inline-item" ><a href="https://www.twitch.tv" target="_blank"><i class="fab fa-twitch fa-2x"></i></a></li>
                     <li class="list-inline-item" ><a href="https://www.github.com" target="_blank"><i class="fab fa-github-square fa-2x"></i></a></li>
-              </ul>
+                </ul>
             </nav>
             <div class="col-md-10 rounded" id="twitchFeed">
                 <!-- Main content goes here -->
                 <h1><strong>Twitch Streams</strong> <em>(by # of followers)</em></h1>
-              <!-- Playing around with the Twitch interactive frame (NOT THE API) -->
-                    <!-- Add a placeholder for the Twitch embed -->
-              <h2>1.) <strong>Ninja</strong></h2>
-              <div id="twitch-embed1"></div>
-              <h2>2.) <strong>Summit1g</strong></h2>
-              <div id="twitch-embed2"></div>
-              <h2>3.) <strong>Riotgames</strong></h2>
-              <div id="twitch-embed3"></div>
-
-              <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
-              <script type="text/javascript">
-                new Twitch.Embed("twitch-embed1", {
-                  width: 854,
-                  height: 480,
-                  channel: "ninja",
-                  autoplay: false
-
-                });
-              </script>
-              <script type="text/javascript">
-                new Twitch.Embed("twitch-embed2", {
-                  width: 854,
-                  height: 480,
-                  channel: "summit1g",
-                  autoplay: false
-                });
-              </script>
-              <script type="text/javascript">
-                new Twitch.Embed("twitch-embed3", {
-                  width: 854,
-                  height: 480,
-                  channel: "riotgames",
-                  autoplay: false
-                });
-              </script>
+                <!-- Playing around with the Twitch interactive frame (NOT THE API) -->
+                <!-- Add a placeholder for the Twitch embed -->
+                <h2>1.) <strong>Ninja</strong></h2>
+                <div class="embed-responsive embed-responsive-16by9 col-xl-8">
+                    <iframe class="embed-responsive-item"
+                    src="http://player.twitch.tv/?channel=ninja&autoplay=false&allowfullscreen=false">
+                </iframe>
             </div>
+            <h2>2.) <strong>Summit1g</strong></h2>
+            <div class="embed-responsive embed-responsive-16by9 col-xl-8">
+                <iframe class="embed-responsive-item"
+                src="http://player.twitch.tv/?channel=summit1g&autoplay=false&allowfullscreen=false">
+            </iframe>
         </div>
-
-        <button class="btn btn-success" onclick="toTop()" id="topButton">Top</button>
+        <h2>3.) <strong>Riotgames</strong></h2>
+        <div class="embed-responsive embed-responsive-16by9 col-xl-8">
+            <iframe class="embed-responsive-item"
+            src="http://player.twitch.tv/?channel=riotgames&autoplay=false&allowfullscreen=false">
+        </iframe>
     </div>
 
-    <footer class="footer">
-    </footer>
-    </body>
-  </html>
+</div>
+</div>
+
+<button class="btn btn-success" onclick="toTop()" id="topButton">Top</button>
+</div>
+
+<footer class="footer">
+</footer>
+</body>
+</html>
