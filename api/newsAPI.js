@@ -77,7 +77,7 @@ function printHeadlines() {
 
     newsapi.v2.everything ({
         pageSize: 99,
-        sortBy: 'popularity',
+        //sortBy: 'popularity',
         q: defaultOptions,    //The keywords to search for
         language: 'en'      //The language desired for news
     }).then(response => {
@@ -85,7 +85,7 @@ function printHeadlines() {
         const feed = document.getElementById("feed");
         console.log(response);
 
-        for (let count = 1; count < numArticles; count++) {
+        for (let count = 1; count <= numArticles; count++) {
             //This prints out the news title followed by the description
             const buttonID = 'button' + count;
             try
@@ -110,7 +110,8 @@ function printHeadlines() {
                 console.log('Error with article: ' + response.articles[count]);
             }
         }
-        newsHTML += '<button class="row rounded m-2 p-2 btn" onclick="loadMoreArticles()">More</button>';
+        newsHTML += '<button class=\"row rounded m-2 p-2 btn\" id="loadMoreButton" onclick="loadMoreArticles()">More</button>';
+        
 
         feed.innerHTML = newsHTML;
   });
@@ -134,11 +135,11 @@ function loadMoreArticles(){
             loadMoreArticles.articleCount = 16;
 
         let count = loadMoreArticles.articleCount;
-        loadMoreArticles.articleCount += 15;
+        loadMoreArticles.articleCount += 14;
 
         newsapi.v2.everything({
             pageSize: 99,
-            sortBy: 'popularity',
+            //sortBy: 'popularity',
             q: defaultOptions,    //The keywords to search for
             language: 'en'        //The language desired for news
         }).then(response => {
@@ -192,11 +193,24 @@ function loadMoreArticles(){
     }
     //When there is no more articles to load changed the "More" button to "No more articles to display"
     else{
-        const feed = document.getElementById("loadMoreButton");
-        feed.innerHTML = '<h2> No more articles :(</h2>'
+        const button = document.getElementById("loadMoreButton");
+        button.innerHTML = '<h3> No more articles :(</h3>'
+
+        const feed = document.getElementById("feed")
+        feed.innerHTML +=   '<button class=\"row rounded m-2 p-2 btn\" onclick="reloadHeadlines()">' + 
+                                '<h2> Reload Articles </h2>' +
+                            '</button>'
     }
 
 }
+
+
+function reloadHeadlines(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    printHeadlines();
+}
+
 
 //Pre:      userOptions is a string containing the user inputted search options
 //Post:     No returns, all user options will be searched and printed
