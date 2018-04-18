@@ -3,29 +3,15 @@ const NewsAPI = require('newsapi'); //Importing the news API
 const newsapi = new NewsAPI('f18e802ece204e9280772a9179a6be6c');    //This is our API Key
 const defaultOptions =  'League of Legends OR Super Smash OR Overwatch OR CSGO OR CS:GO' +
                         'OR Counter Strike OR PUBG OR Playunknown OR Fortnite OR Dota ' +
-                        'OR Call of duty OR WoW OR World Of Warcraft';
+                        'OR Call of duty OR WoW OR World Of Warcraft OR Rocket League OR Starcraft';
     //This is a list of all the keywords we're looking for
     //Keep everything in one string seperated by OR
-
-//PRE:      newsURL: The url we are launching
-//          id: The ID of the button to edit the HTML of
-//POST:     No returns, changes the html of the button to be an iframe of new article
-//PURPOSE:  Launches the desired news article in an iframe within the button that it was pressed
-function displayArticle(newsURL, id) {
-    let newsFeed = document.getElementById(id);  //The button to edit
-
-    feed.innerHTML = + '<div class="col-10">'
-                    + '<iframe src=' + newsURL + '></iframe>'
-                    + '</div>'
-                    + '</div>';
-}
 
 function topHeadlineCarousel() {
     //News API object
     //The everything keyword queries from everything
     //Can change to 'topHeadlines' for top headlines
     newsapi.v2.everything({
-        //pageSize: 100,
         sortBy: 'popularity',
         q: defaultOptions,    //The keywords to search for
         language: 'en'      //The language desired for news
@@ -69,15 +55,15 @@ function topHeadlineCarousel() {
 //POST:     No returns, just prints news to html
 //PURPOSE:  Prints to html a list of ten results
 function printHeadlines() {
-    //News API object
-    //The everything keyword queries from everything
-    //Can change to 'topHeadlines' for top headlines
+    
     let numArticles = 15;
     let newsHTML = '';
 
+    //News API object
+    //The everything keyword queries from everything
+    //Can change to 'topHeadlines' for top headlines
     newsapi.v2.everything ({
         pageSize: 99,
-        //sortBy: 'popularity',
         q: defaultOptions,    //The keywords to search for
         language: 'en'      //The language desired for news
     }).then(response => {
@@ -139,7 +125,6 @@ function loadMoreArticles(){
 
         newsapi.v2.everything({
             pageSize: 99,
-            //sortBy: 'popularity',
             q: defaultOptions,    //The keywords to search for
             language: 'en'        //The language desired for news
         }).then(response => {
@@ -178,7 +163,7 @@ function loadMoreArticles(){
                 }
 
                 count++;
-                if(count === response.totalResults - 1)
+                if(count === response.totalResults - 1 || count == 98)
                     loadMoreArticles.isMoreArticles = false;
             }
 
@@ -204,7 +189,7 @@ function loadMoreArticles(){
 
 }
 
-
+//This will simply reset the view back to the stop of the screen and reload the news articles from the start
 function reloadHeadlines(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
