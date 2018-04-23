@@ -27,7 +27,8 @@ function printStreamsList()
         //https://dev.mixer.com/rest.html#
         var channel = res.body[i];
         //console.log(channel.id);
-        feed.innerHTML += "<div class=\"row rounded bg-secondary m-2 p-2\">"
+        feed.innerHTML += "<li style=\"list-style-type:none\">"
+                        + "<div class=\"row rounded bg-secondary m-2 p-2\">"
                         +"<iframe "
                         + "allowfullscreen=\"true\" "
                         + "src=\"https://mixer.com/embed/player/" 
@@ -39,10 +40,11 @@ function printStreamsList()
                         + "width=\"640\" "
                         + "height=\"360\" "
                         + "></iframe>"
+                        + "</div>"
                         + "<div><h1>" + channel.user.username + "</h1></div>"
                         + "<div><h2>Game: " + channel.type.name + "</h2></div>"
                         + "<div><h2>Viewers: " + channel.viewersCurrent + "</h2></div>"
-                        + "</div>"
+                        + "</li>"
 
     }
     });
